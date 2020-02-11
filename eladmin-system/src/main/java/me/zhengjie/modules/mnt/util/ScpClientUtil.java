@@ -16,7 +16,7 @@ public class ScpClientUtil {
 
 	static private ScpClientUtil instance;
 
-	static synchronized public ScpClientUtil getInstance(String ip, int port, String username, String passward) {
+	public static synchronized ScpClientUtil getInstance(String ip, int port, String username, String passward) {
 		if (instance == null) {
 			instance = new ScpClientUtil(ip, port, username, passward);
 		}
@@ -86,3 +86,4 @@ public class ScpClientUtil {
 
 
 }
+
