@@ -52,7 +52,6 @@ public class MenuServiceImpl implements MenuService {
     @Override
     @Cacheable
     public List<MenuDto> queryAll(MenuQueryCriteria criteria){
-//        Sort sort = new Sort(Sort.Direction.DESC,"id");
         return menuMapper.toDto(menuRepository.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root,criteria,criteriaBuilder)));
     }
 
@@ -283,3 +282,4 @@ public class MenuServiceImpl implements MenuService {
         FileUtil.downloadExcel(list, response);
     }
 }
+
